@@ -1,1 +1,29 @@
-<p>home works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Dni</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of studentList">
+            <td>{{student.id}}</td>
+            <td>{{student.dni}}</td>
+            <td>{{student.lastName}}</td>
+            <td>{{student.firstName}}</td>
+            <td>{{student.email}}/td>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td><input [(ngModel)]="dni"></td>
+            <td><input [(ngModel)]="lastName"></td>
+            <td><input [(ngModel)]="firstName"></td>
+            <td><input [(ngModel)]="email"></td>
+            <td coldspan="2" style="text-align: center;"><button (click)="add()">Agregar</button></td>
+        </tr>
+    </tfoot>
+</table>
