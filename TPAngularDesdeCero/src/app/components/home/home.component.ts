@@ -49,7 +49,6 @@ studentList = new Array<student>()
       estudiante.adress = 'abc123'
       estudiante.phone = '000' 
 
-
     this.studentService.save(estudiante).subscribe( () => {
       this.getAll()
     }, error => {
