@@ -95,7 +95,7 @@ studentList = new Array<student>()
     this.email3 = estudiante.email
     
     this.modalService.open(ver).result.then(() => {
-      if((this.dni2.trim() !== '' && this.lastName2.trim() !== '' && this.firstName2.trim() !== '' && this.email2.trim() !== '') && 
+      if(this.dni2.trim() !== '' && this.lastName2.trim() !== '' && this.firstName2.trim() !== '' && this.email2.trim() !== '' && 
       (this.dni2.trim() !== this.dni3.trim() || this.lastName2.trim() !== this.lastName3.trim() || this.firstName2.trim() !== this.firstName3.trim() || this.email2.trim() !== this.email3.trim())) {
         let s = new student()
         s.id = this.id2
