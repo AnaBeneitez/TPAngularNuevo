@@ -1,7 +1,7 @@
 export class student {
     id!: number
     dni!: string
-    lastName!: String 
+    lastName!: string 
     firstName!: string
     email!: string
     cohort!: number

@@ -7,7 +7,7 @@ import {HttpResponse, HttpParams, HttpClient } from '@angular/common/http';
 })
 export class StudentService {
 
-  private url = 'https://788c-201-179-13-140.ngrok-free.app/student'
+  private url = 'https://5751-181-231-122-56.ngrok-free.app/student'
 
   constructor(private http: HttpClient) { }
 
