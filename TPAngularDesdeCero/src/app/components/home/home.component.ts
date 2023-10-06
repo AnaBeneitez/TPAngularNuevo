@@ -12,22 +12,21 @@ export class HomeComponent implements OnInit {
   
 studentList = new Array<student>()
 
-  dni!: string;
-  lastName!: string;
-  firstName!: string;
-  email!: string;
+  dni: string;
+  lastName: string;
+  firstName: string;
+  email: string;
 
-  id2 !: number;
-  dni2 !: string;
-  lastName2 !: string;
-  firstName2 !: string;
-  email2 !: string;
+  id2: number;
+  dni2: string;
+  lastName2: string;
+  firstName2: string;
+  email2: string;
 
-  id3 !: number;
-  dni3 !: string;
-  lastName3 !: string;
-  firstName3 !: string;
-  email3 !: string;
+  dni3: string;
+  lastName3: string;
+  firstName3: string;
+  email3: string;
 
   constructor(private studentService: StudentService, private modalService: NgbModal){}
 
@@ -49,7 +48,7 @@ studentList = new Array<student>()
     })
   }
 
-  add(): void {
+  add() {
     if (this.dni.trim() !== '' && this.lastName.trim() !== '') {
       let estudiante = new student()
       estudiante.dni = this.dni
@@ -63,7 +62,7 @@ studentList = new Array<student>()
       estudiante.phone = '000' 
 
     this.studentService.save(estudiante).subscribe( () => {
-      this.getAll()
+      location.reload()
     }, error => {
       console.error(error)
       alert('Error: ' + error.error.message)
@@ -72,8 +71,8 @@ studentList = new Array<student>()
     }
   }
 
-  delete(id: number, estudiante: student) {
-    this.studentService.delete(id, estudiante).subscribe(() => {
+  delete(id: number) {
+    this.studentService.delete(id).subscribe(() => {
       location.reload()
     }, error => {
       console.error(error)
@@ -88,7 +87,6 @@ studentList = new Array<student>()
     this.firstName2 = estudiante.firstName
     this.email2 = estudiante.email
 
-    this.id3 = estudiante.id
     this.dni3 = estudiante.dni
     this.lastName3 = estudiante.lastName
     this.firstName3 = estudiante.firstName
@@ -109,8 +107,8 @@ studentList = new Array<student>()
         s.adress = 'abc123'
         s.phone = '000' 
 
-        this.studentService.update(s.id, s).subscribe(() => {
-          location.reload();
+        this.studentService.update(s).subscribe(() => {
+          location.reload()
         }, error => {
           console.error(error)
           alert('Error: ' + error.error.message)

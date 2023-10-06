@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {HttpResponse, HttpParams, HttpClient } from '@angular/common/http';
+import {HttpClient } from '@angular/common/http';
+import { student } from '../models/student.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +16,15 @@ export class StudentService {
     return this.http.get(this.url + '/getAll')
   }
 
-  save(student: any): Observable<any> {
+  save(student: student): Observable<any> {
     return this.http.post(this.url, student)
   }
 
-  update(id: number, student: any): Observable<any> {
-    return this.http.post(this.url + '/' + id + '/update', student)
+  update(student: student): Observable<any> {
+    return this.http.post(this.url + '/' + student.id + '/update', student)
   }
 
-  delete(id: number, student: any): Observable<any> {
+  delete(id: number): Observable<any> {
     return this.http.post(this.url + '/' + id + '/delete', null)
   }
 }
